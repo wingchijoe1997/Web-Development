@@ -1,0 +1,145 @@
+/* custom css goes here */
+body {
+  background-color: #faeee7;
+}
+.container {
+  background-color: #faeee7;
+}
+.jumbotron {
+  background-color: #faeee7;
+}
+.post-img {
+  margin-left: 50px;
+  border-radius: 100px;
+}
+
+/* home page */
+.message1 {
+  font-size: 46px;
+  font-weight: bold;
+  color: #33272a;
+}
+.message2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 36px;
+  color: #33272a;
+}
+/* about page */
+.about p {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #33272a;
+}
+.resumeLink {
+  margin-top: 10px;
+}
+.Hobbies {
+  padding-left: 30px;
+}
+.Language {
+  padding-left: 30px;
+}
+.Hobbies li {
+  margin-top: 10px;
+  color: #33272a;
+}
+
+/* projects page */
+.project1 {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+}
+.project-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.column {
+  flex: 50%;
+}
+.column li {
+  margin-left: 20px;
+}
+.projects-img {
+  border-radius: 30px;
+}
+/* services page */
+.serviceTitle {
+  font-size: 46px;
+  font-weight: bold;
+}
+.service-list {
+  display: grid;
+}
+.service-list li {
+  margin-top: 24px;
+  margin-left: 30px;
+  font-size: 32px;
+}
+.service-img {
+  height: 80px;
+  width: 80px;
+}
+.language-img {
+  margin-top: 8px;
+  margin-left: 30px;
+}
+/* contact page */
+
+.contact p {
+  margin-bottom: 10px;
+}
+.contact-img {
+  margin-top: 3px;
+  height: 32px;
+  width: 32px;
+}
+.m1 {
+  font-size: 46px;
+  font-weight: bold;
+}
+.contact-method {
+  display: flex;
+  flex: auto;
+  margin-top: 10px;
+}
+.contact-method p {
+  font-size: 32px;
+}
+.contact-method a {
+  font-size: 32px;
+}
+.contact-text {
+  margin-left: 8px;
+}
+.thinking-img {
+  margin-top: 30px;
+  opacity: 0.2;
+  height: 350px;
+  width: 350px;
+}
+.meassgeBox {
+  padding: 40px;
+}
+.input-text {
+  height: 26px;
+  width: 300px;
+}
+.submit-btn {
+  background-color: #ff8ba7;
+  border: none;
+  color: #33272a;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 100px;
+}
+
+.post-img {
+  margin-left: 0;
+  margin-right: 14px;
+}
