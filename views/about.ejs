@@ -1,36 +1,60 @@
 <%- include partials/header.ejs %> <%- include partials/main_nav.ejs %>
 
-<!-- Main Content -->
+<!-- Main Content of about page -->
 <main class="container">
   <div class="jumbotron">
     <!-- </nav> -->
 
     <div class="content about">
-      <img
+      <!-- <img
         src="/img/joelam.jpeg"
         alt="HTML code on a screen"
         width="200"
         height="200"
-        class="post-img"
+        class="myphoto"
       />
+      <p>Wing Chi Lam</p>
+      <p>Software Engineer</p>
       <p>
-        My name is Wing Chi Lam, Joe. I am from Hong Kong. I am currently
-        studying in centennial college. My major is Software Engineering.
-      </p>
-      <p>Hobbies</p>
-      <ul class="Hobbies">
-        <li><p>Basketball</p></li>
-        <li><p>Kick Boxing</p></li>
-        <li><p>GYM</p></li>
-      </ul>
-      <p>Language</p>
-      <ul class="Language">
-        <li><p>English</p></li>
-        <li><p>Cantonese</p></li>
-        <li><p>Mandarin</p></li>
-      </ul>
+        Hi, I am from Hong Kong. I am currently studying in centennial college.
+        My major is Software Engineering.
+      </p> -->
+      <section class="testimonial-section">
+        <div class="grid-3-cols">
+          <img src="/img/joelam.jpeg" alt="People sitting on chairs" />
+          <div class="testimonial-box">
+            <h2>Wing Chi Lam (Software Engineer)</h2>
+            <blockquote class="testimonial-text">
+              Hi, I am from Hong Kong. I am currently studying in centennial
+              college. My major is Software Engineering. I also studied the Game
+              Software Development in Hong Kong before.
+            </blockquote>
+          </div>
+        </div>
+      </section>
+      <section class="about-myself">
+        <ul class="Hobbies">
+          <p>Hobbies</p>
+          <li><p>Basketball</p></li>
+          <li><p>Kick Boxing</p></li>
+          <li><p>GYM</p></li>
+        </ul>
+
+        <ul class="Language">
+          <p>Languages</p>
+          <li><p>English</p></li>
+          <li><p>Cantonese</p></li>
+          <li><p>Mandarin</p></li>
+        </ul>
+      </section>
       <p>My resume is the link below.</p>
       <a href="try.pdf" target="_blank" class="resumeLink">Resume</a>
+      <a
+        href="https://github.com/wingchijoe1997?tab=repositories"
+        target="_blank"
+        class="resumeLink"
+        >Github</a
+      >
     </div>
   </div>
 </main>

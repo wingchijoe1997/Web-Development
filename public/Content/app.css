@@ -1,36 +1,117 @@
+/* 
+  Wing Chi Lam
+  301244396
+  Feb 2023
+*/
 /* custom css goes here */
 body {
-  background-color: #faeee7;
+  background-color: #232946;
 }
 .container {
-  background-color: #faeee7;
+  background-color: #232946;
+  /* border: solid 20px; */
 }
 .jumbotron {
-  background-color: #faeee7;
+  background-color: #232946;
 }
-.post-img {
-  margin-left: 50px;
+.logo-img {
   border-radius: 100px;
+  margin-right: 14px;
+}
+
+.navbar {
+  background-color: #232946 !important;
 }
 
 /* home page */
-.message1 {
-  font-size: 46px;
-  font-weight: bold;
-  color: #33272a;
+
+.message3 {
+  font-size: 2rem;
+
+  color: #b8c1ec;
 }
-.message2 {
-  font-size: 32px;
-  font-weight: bold;
-  margin-top: 36px;
-  color: #33272a;
+
+.section-hero {
+  background-color: #232946;
+  padding: 4.8rem 0 9.6rem 0;
 }
+.section-hero h1,
+p {
+  color: #b8c1ec;
+}
+.heading-primary {
+  font-weight: bold;
+}
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+.hero-text-box {
+  margin-top: 60px;
+}
+.hero-img {
+  width: 100%;
+  border-radius: 50px;
+}
+
+.delivered-meals {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
+
 /* about page */
 .about p {
   font-size: 28px;
   font-weight: bold;
   margin-top: 10px;
-  color: #33272a;
+  color: #b8c1ec;
+}
+.about a {
+  margin-right: 20px;
+}
+.about-myself {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* gap: 74px; */
 }
 .resumeLink {
   margin-top: 10px;
@@ -41,9 +122,51 @@ body {
 .Language {
   padding-left: 30px;
 }
+.Language li {
+  margin-left: 24px;
+}
 .Hobbies li {
   margin-top: 10px;
-  color: #33272a;
+  margin-left: 24px;
+}
+.myphoto {
+  border-radius: 100px;
+}
+
+/* TESTIMONIAL */
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 80px;
+}
+.testimonial-section {
+  background-color: #2c3358;
+  color: #fff;
+  padding: 24px;
+  border-radius: 12px;
+}
+.testimonial-section img {
+  height: 350px;
+  width: 350px;
+  border-radius: 100px;
+}
+.testimonial-box {
+  grid-column: 2 / -1;
+  align-self: center;
+}
+
+.testimonial-box h2 {
+  margin-bottom: 24px;
+  /* 20 / 24 / 30 */
+  font-size: 30px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 24px;
+  font-size: 28px;
+  line-height: 1.7;
+  color: #e6fcf5;
 }
 
 /* projects page */
@@ -51,10 +174,20 @@ body {
   display: flex;
   align-items: center;
   margin-top: 14px;
+  background-color: #2c3358;
+  border-radius: 30px;
+}
+.projects {
+  color: #b8c1ec;
+}
+.column p,
+li {
+  color: #b8c1ec;
 }
 .project-title {
   text-align: center;
   margin-bottom: 20px;
+  color: #fffffe;
 }
 .column {
   flex: 50%;
@@ -64,11 +197,14 @@ body {
 }
 .projects-img {
   border-radius: 30px;
+  width: 400px;
+  height: 350px;
 }
 /* services page */
 .serviceTitle {
   font-size: 46px;
   font-weight: bold;
+  color: #fffffe;
 }
 .service-list {
   display: grid;
@@ -77,6 +213,7 @@ body {
   margin-top: 24px;
   margin-left: 30px;
   font-size: 32px;
+  color: #b8c1ec;
 }
 .service-img {
   height: 80px;
@@ -90,15 +227,17 @@ body {
 
 .contact p {
   margin-bottom: 10px;
+  color: #b8c1ec;
 }
 .contact-img {
-  margin-top: 3px;
+  margin-top: 7px;
   height: 32px;
   width: 32px;
 }
 .m1 {
   font-size: 46px;
   font-weight: bold;
+  color: #fffffe;
 }
 .contact-method {
   display: flex;
@@ -110,36 +249,150 @@ body {
 }
 .contact-method a {
   font-size: 32px;
+  color: #b8c1ec;
 }
 .contact-text {
   margin-left: 8px;
 }
-.thinking-img {
-  margin-top: 30px;
-  opacity: 0.2;
-  height: 350px;
-  width: 350px;
+
+.contact-form label {
+  color: #b8c1ec;
 }
-.meassgeBox {
-  padding: 40px;
+.contact-form input,
+textarea {
+  width: 250px;
 }
-.input-text {
-  height: 26px;
-  width: 300px;
-}
-.submit-btn {
-  background-color: #ff8ba7;
-  border: none;
-  color: #33272a;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 100px;
+.leave-message {
+  font-size: 32px;
+  color: #b8c1ec;
 }
 
-.post-img {
-  margin-left: 0;
-  margin-right: 14px;
+/**************************/
+/* CTA SECTION */
+/**************************/
+
+.section-cta {
+  /* top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
+
+  /* top / horizontal / left */
+  padding: 4.8rem 0 12.8rem;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+  /* background-image: linear-gradient(to right bottom, #eb984e, #e67e22); */
+  background-color: #2c3358;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.cta-text-box {
+  padding: 2.4rem;
+  color: #b8c1ec;
+}
+
+.cta .heading-secondary {
+  /* color: #45260a; */
+  color: inherit;
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.cta-form input,
+.cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: all 0.3s;
+}
+.btn--full:link,
+.btn--full:visited {
+  background-color: #eebbc3;
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #eebbc3;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
 }

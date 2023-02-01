@@ -1,78 +1,85 @@
 <%- include partials/header.ejs %> <%- include partials/main_nav.ejs %>
 
-<!-- Main Content -->
+<!-- Main Content of contact page-->
 <main class="container">
   <div class="jumbotron">
     <div class="contactContainer">
       <div class="content contact">
-        <p class="contact-method m1"><u>Contact</u></p>
+        <h3 class="contact-method m1"><u>Contact</u></h3>
         <div class="contact-method">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="contact-img"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-            />
-          </svg>
-
+          <img src="/img/telephone.png" class="contact-img" />
           <p class="contact-text">Phone: 437-981-9883</p>
         </div>
         <div class="contact-method">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="contact-img"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H6.911a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z"
-            />
-          </svg>
+          <img src="/img/gmail.png" class="contact-img" />
           <p class="contact-text">Email: wingchijoe@gmail.com</p>
         </div>
         <div class="contact-method">
           <img src="/img/instagram-logo.png" class="contact-img" />
           <p class="contact-text">Instagram:</p>
-          <a href="https://www.instagram.com/lamwingchi/">Lamwingchi</a>
+          <a href="https://www.instagram.com/lamwingchi/"> Lamwingchi</a>
         </div>
         <div class="contact-method">
           <img src="/img/facebook.png" class="contact-img" />
           <p class="contact-text">Facebook:</p>
-          <a href="https://www.facebook.com/wingchijoe">Joe Lam</a>
+          <a href="https://www.facebook.com/wingchijoe"> Joe Lam</a>
         </div>
-        <!-- <img src="/img/thinking.png" class="thinking-img" /> -->
       </div>
 
-      <p>
-        Or you can leave your meassages, i will contact you as soon as possible!
-      </p>
-      <!-- <input type="text" class="input-text" />
-      <a onclick="submitBtn" type="button" class="submit-btn" href="/home">
-        Submit
-      </a> -->
-      <form action="/home" method="get">
-        <label for="fname">First name:</label><br />
-        <input type="text" id="fname" name="fname" /><br />
-        <label for="lname">Last name:</label><br />
-        <input type="text" id="lname" name="lname" /><br /><br />
-        <label for="email">Email:</label><br />
-        <input type="text" id="email" name="email" /><br /><br />
-        <label for="meassage">Message:</label><br />
-        <textarea type="text" id="message" name="message"></textarea>
-        <br /><br />
-        <button type="submit" value="Submit" class="submit-btn">Submit</button>
-      </form>
+      <div class="cta">
+        <div class="cta-text-box">
+          <p class="cta-text">
+            Leave your messages here, i will contact you as soon as possible!
+          </p>
+          <form class="cta-form" action="/home" id="form">
+            <div>
+              <label for="first-name">First Name</label>
+              <input
+                id="full-name"
+                type="text"
+                name="First Name"
+                placeholder="Example: Joe"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="last-name">Last Name</label>
+              <input
+                id="full-name"
+                type="text"
+                name="Last Name"
+                placeholder="Example: Lam"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="email">Email address</label>
+              <input
+                id="email"
+                type="email"
+                name="Email"
+                placeholder="me@example.com"
+                required
+              />
+            </div>
+            <div>
+              <label for="Messages">Messages</label>
+              <input
+                id="Messages"
+                type="Messages"
+                name="Messages"
+                placeholder="Type here"
+                required
+              />
+            </div>
+            <button class="btn btn--form" name="Confirm Submit" id="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </main>
