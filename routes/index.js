@@ -31,4 +31,14 @@ router.get("/contact", function (req, res, next) {
   res.render("contact", { title: "Contact" });
 });
 
+/* GET Contact Us page. */
+router.get("/business", function (req, res, next) {
+  res.render("business", { title: "business" });
+});
+
+/* GET Contact Us page. */
+router.get("/Login", function (req, res, next) {
+  res.render("Login", { title: "Login" });
+});
+
 module.exports = router;
