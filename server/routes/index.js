@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-let webuser = require("../models/webuser");
+let Business = require("../models/webuser");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -36,7 +36,7 @@ router.get("/contact", function (req, res, next) {
 /* GET business  page. */
 router.get("/business", function (req, res, next) {
   // res.render("business", { title: "business" });
-  webuser.find((err, business) => {
+  Business.find((err, business) => {
     if (err) {
       return console.error(err);
     } else {
@@ -96,25 +96,25 @@ router.post("/edit/:id", (req, res, next) => {
     email: req.body.email,
     contact: req.body.contact,
   });
-  Business.updateOne({ id: id }, updatedBusiness, (err) => {
+  Business.updateOne({ _id: id }, updatedBusiness, (err) => {
     if (err) {
       console.log(err);
       res.end(err);
     } else {
-      res.redirect("/businessList/business");
+      res.redirect("/business");
     }
   });
 });
 
 // get route for displaying the delete page
-router.get("/delete/:id", (req, res, next) => {
+router.get("/business/delete/:id", (req, res, next) => {
   let id = req.params.id;
   Business.remove({ _id: id }, (err) => {
     if (err) {
       console.log(err);
       res.end(err);
     } else {
-      res.redirect("/businessList/business");
+      res.redirect("/business");
     }
   });
 });
