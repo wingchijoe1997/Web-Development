@@ -5,14 +5,18 @@
   <div class="row">
     <div class="offset-md-1 col-md-10">
       <h1 class="business-title"><%= title %></h1>
+      <a href="/business/add" class="Businessbtn btn btn-primary" role="button">
+        <i class="fas fa-plus-circle"></i>Add Business
+      </a>
       <br />
+
       <table class="table table-bordered table-striped table-hover table-dark">
         <!-- Header Row-->
         <tr class="d-flex">
           <th class="text-center col-2">Name</th>
           <th class="text-center col-4">Email</th>
-          <th class="text-center col-3">Contact</th>
-          <th class="text-center col-3"></th>
+          <th class="text-center col-2">Contact</th>
+          <th class="text-center col-4"></th>
         </tr>
 
         <!-- Repeatable Template Row -->
@@ -20,14 +24,23 @@
         <tr class="d-flex">
           <td class="text-center col-2"><%=Business[count].name %></td>
           <td class="text-center col-4"><%= Business[count].email %></td>
-          <td class="text-center col-3"><%= Business[count].contact %></td>
-          <td class="text-center col-3">
-            <button type="button">Update</button>
-            <button type="button">Delete</button>
+          <td class="text-center col-2"><%= Business[count].contact %></td>
+          <td class="text-center col-2">
+            <a
+              href="/business/edit/<%= Business[count]._id %>"
+              class="Businessbtn btn btn-primary btn-sm"
+              ><i class="fas fa-pencil-alt"></i>Edit</a
+            >
+          </td>
+          <td class="text-center col-2">
+            <a
+              href="/business/delete/<%= Business[count]._id %>"
+              class="Businessbtn btn btn-danger btn-sm"
+              ><i class="fas fa-trash-alt"></i>Delete</a
+            >
           </td>
         </tr>
         <% } %>
-        <button type="button">Add</button>
       </table>
     </div>
   </div>

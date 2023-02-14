@@ -401,3 +401,8 @@ textarea {
 .business-title {
   color: #fffffe;
 }
+.Businessbtn {
+  font-size: 14px !important;
+  font-weight: 0;
+  padding: 0.5rem 3rem !important;
+}

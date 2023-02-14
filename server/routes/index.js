@@ -48,6 +48,77 @@ router.get("/business", function (req, res, next) {
   });
 });
 
+// get route for displaying the add page - Create Operation
+router.get("/add", (req, res, next) => {
+  res.render("businessList/add", { title: "Add business" });
+});
+
+// post route for processing the add page -Create Operation
+router.post("/add", (req, res, next) => {
+  let newBusiness = Business({
+    name: req.body.name,
+    email: req.body.email,
+    contact: req.body.contact,
+  });
+  Business.create(newBusiness, (err, Business) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      //refresh the business list
+      res.redirect("/businessList/business");
+    }
+  });
+});
+
+// get route for displaying the edit page   - Update Operation
+router.get("/edit/:id", (req, res, next) => {
+  let id = req.params.id;
+  Business.findById(id, (err, businessToEdit) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.render("/businessList/edit", {
+        title: "Edit business",
+        Business: businessToEdit,
+      });
+    }
+  });
+});
+
+// post route for processing the edit page  - Update Operation
+router.post("/edit/:id", (req, res, next) => {
+  let id = req.params.id;
+  let updatedBusiness = Business({
+    _id: id,
+    name: req.body.name,
+    email: req.body.email,
+    contact: req.body.contact,
+  });
+  Business.updateOne({ id: id }, updatedBusiness, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.redirect("/businessList/business");
+    }
+  });
+});
+
+// get route for displaying the delete page
+router.get("/delete/:id", (req, res, next) => {
+  let id = req.params.id;
+  Business.remove({ _id: id }, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      res.redirect("/businessList/business");
+    }
+  });
+});
+
 /* GET Login Us page. */
 router.get("/Login", function (req, res, next) {
   res.render("Login", { title: "Login" });
