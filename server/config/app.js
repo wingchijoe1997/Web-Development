@@ -30,8 +30,8 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "../public"))); //read css file or other file in public folder
-app.use(express.static(path.join(__dirname, "../node_modules"))); //read css file or other file in node_modules folder
+app.use(express.static(path.join(__dirname, "../../public"))); //read css file or other file in public folder
+app.use(express.static(path.join(__dirname, "../../node_modules"))); //read css file or other file in node_modules folder
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
