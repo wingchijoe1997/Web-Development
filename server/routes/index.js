@@ -4,124 +4,42 @@ var router = express.Router();
 
 let Business = require("../models/webuser");
 
+let indexController = require("../controllers/index");
+let businessController = require("../controllers/business");
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("content", { title: "Home" });
-});
+router.get("/", indexController.displayHomePage);
 
 /* GET home page. */
-router.get("/home", function (req, res, next) {
-  res.render("content", { title: "Home" });
-});
+router.get("/home", indexController.displayHomePage);
 
 /* GET About Us page. */
-router.get("/about", function (req, res, next) {
-  res.render("about", { title: "About" });
-});
+router.get("/about", indexController.displayAboutPage);
 
 /* GET Products page. */
-router.get("/projects", function (req, res, next) {
-  res.render("projects", { title: "Projects" });
-});
-
+router.get("/projects", indexController.displayProjectsPage);
 /* GET Services page. */
-router.get("/services", function (req, res, next) {
-  res.render("services", { title: "Services" });
-});
+router.get("/services", indexController.displayServicesPage);
 
 /* GET Contact Us page. */
-router.get("/contact", function (req, res, next) {
-  res.render("contact", { title: "Contact" });
-});
+router.get("/contact", indexController.displayContactPage);
 
 /* GET business  page. */
-router.get("/business", function (req, res, next) {
-  // res.render("business", { title: "business" });
-  Business.find((err, business) => {
-    if (err) {
-      return console.error(err);
-    } else {
-      res.render("businessList/business", {
-        title: "Business",
-        Business: business,
-      });
-    }
-  });
-});
+router.get("/business", businessController.displayBusiness);
 
 // get route for displaying the add page - Create Operation
-router.get("/business/add", (req, res, next) => {
-  res.render("businessList/add", { title: "Add business" });
-});
+router.get("/business/add", businessController.displayAddPage);
 
 // post route for processing the add page -Create Operation
-router.post("/business/add", (req, res, next) => {
-  let newBusiness = Business({
-    name: req.body.name,
-    email: req.body.email,
-    contact: req.body.contact,
-  });
-
-  Business.create(newBusiness, (err, Business) => {
-    if (err) {
-      console.log(err);
-      res.end(err);
-    } else {
-      //refresh the business list
-      res.redirect("/business");
-    }
-  });
-});
+router.post("/business/add", businessController.processAddPage);
 
 // get route for displaying the edit page   - Update Operation
-router.get("/business/edit/:id", (req, res, next) => {
-  let id = req.params.id;
-  Business.findById(id, (err, businessToEdit) => {
-    if (err) {
-      console.log(err);
-      res.end(err);
-    } else {
-      res.render("businessList/edit", {
-        title: "Edit business",
-        Business: businessToEdit,
-      });
-
-      console.log("123");
-    }
-  });
-});
+router.get("/business/edit/:id", businessController.displayEditPage);
 
 // post route for processing the edit page  - Update Operation
-router.post("/business/edit/:id", (req, res, next) => {
-  let id = req.params.id;
-  let updatedBusiness = Business({
-    _id: id,
-    name: req.body.name,
-    email: req.body.email,
-    contact: req.body.contact,
-  });
-  Business.updateOne({ _id: id }, updatedBusiness, (err) => {
-    if (err) {
-      console.log(err);
-      res.end(err);
-    } else {
-      res.redirect("/business");
-    }
-  });
-});
+router.post("/business/edit/:id", businessController.processEditPage);
 
 // get route for displaying  the delete page
-router.get("/business/delete/:id", (req, res, next) => {
-  let id = req.params.id;
-  Business.remove({ _id: id }, (err) => {
-    if (err) {
-      console.log(err);
-      res.end(err);
-    } else {
-      res.redirect("/business");
-    }
-  });
-});
+router.get("/business/delete/:id", businessController.performDelete);
 
 /* GET Login Us page. */
 router.get("/Login", function (req, res, next) {

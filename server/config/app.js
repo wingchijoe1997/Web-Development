@@ -19,7 +19,7 @@ mongoDB.once("open", () => {
 
 let indexRouter = require("../routes/index");
 let usersRouter = require("../routes/users");
-let webuserRouter = require("../routes/webuser");
+// let webuserRouter = require("../routes/webuser"); // can delete after finished
 
 let app = express();
 
@@ -35,7 +35,8 @@ app.use(express.static(path.join(__dirname, "../../node_modules"))); //read css 
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/webuser", webuserRouter);
+
+// app.use("/webuser", webuserRouter); // can delete after finished the whole projects
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
