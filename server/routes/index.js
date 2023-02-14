@@ -49,30 +49,31 @@ router.get("/business", function (req, res, next) {
 });
 
 // get route for displaying the add page - Create Operation
-router.get("/add", (req, res, next) => {
+router.get("/business/add", (req, res, next) => {
   res.render("businessList/add", { title: "Add business" });
 });
 
 // post route for processing the add page -Create Operation
-router.post("/add", (req, res, next) => {
+router.post("/business/add", (req, res, next) => {
   let newBusiness = Business({
     name: req.body.name,
     email: req.body.email,
     contact: req.body.contact,
   });
+
   Business.create(newBusiness, (err, Business) => {
     if (err) {
       console.log(err);
       res.end(err);
     } else {
       //refresh the business list
-      res.redirect("/businessList/business");
+      res.redirect("/business");
     }
   });
 });
 
 // get route for displaying the edit page   - Update Operation
-router.get("/edit/:id", (req, res, next) => {
+router.get("/business/edit/:id", (req, res, next) => {
   let id = req.params.id;
   Business.findById(id, (err, businessToEdit) => {
     if (err) {
@@ -88,7 +89,7 @@ router.get("/edit/:id", (req, res, next) => {
 });
 
 // post route for processing the edit page  - Update Operation
-router.post("/edit/:id", (req, res, next) => {
+router.post("/business/edit/:id", (req, res, next) => {
   let id = req.params.id;
   let updatedBusiness = Business({
     _id: id,
