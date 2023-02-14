@@ -20,7 +20,7 @@ router.get("/about", function (req, res, next) {
 
 /* GET Products page. */
 router.get("/projects", function (req, res, next) {
-  res.render("projects", { title: "Products" });
+  res.render("projects", { title: "Projects" });
 });
 
 /* GET Services page. */
@@ -33,19 +33,22 @@ router.get("/contact", function (req, res, next) {
   res.render("contact", { title: "Contact" });
 });
 
-/* GET business Us page. */
+/* GET business  page. */
 router.get("/business", function (req, res, next) {
   // res.render("business", { title: "business" });
   webuser.find((err, business) => {
     if (err) {
       return console.error(err);
     } else {
-      res.render("business", { title: "Business", Business: business });
+      res.render("businessList/business", {
+        title: "Business",
+        Business: business,
+      });
     }
   });
 });
 
-/* GET Contact Us page. */
+/* GET Login Us page. */
 router.get("/Login", function (req, res, next) {
   res.render("Login", { title: "Login" });
 });
