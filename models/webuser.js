@@ -1,15 +1,15 @@
 let mongoose = require("mongoose");
 
 //create a user class
-let webuser = mongoose.Schema(
+let business = mongoose.Schema(
   {
     name: String,
     email: String,
-    password: String,
+    contact: String,
   },
   {
-    collection: "user",
+    collection: "business",
   }
 );
 
-module.exports = mongoose.model("user", webuser);
+module.exports = mongoose.model("business", business);

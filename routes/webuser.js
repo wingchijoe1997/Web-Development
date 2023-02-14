@@ -7,12 +7,12 @@ let webuser = require("../models/webuser");
 
 // get route for
 router.get("/", (req, res, next) => {
-  webuser.find((err, user) => {
+  webuser.find((err, business) => {
     if (err) {
       return console.error(err);
     } else {
-      console.log(user);
-      res.render("business", { title: "Business", User: user });
+      //console.log(user);
+      res.render("business", { title: "Business", Business: business });
     }
   });
 });

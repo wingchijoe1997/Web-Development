@@ -3,22 +3,25 @@
 <!-- Main Content of projects page -->
 <main class="container">
   <div class="row">
-    <div class="offset-md-2 col-md-10">
+    <div class="offset-md-1 col-md-10">
       <h1 class="business-title"><%= title %></h1>
       <br />
       <table class="table table-bordered table-striped table-hover table-dark">
         <!-- Header Row-->
         <tr class="d-flex">
-          <th class="text-center col-2">name</th>
-          <th class="text-center col-5">email</th>
+          <th class="text-center col-2">Name</th>
+          <th class="text-center col-4">Email</th>
+          <th class="text-center col-3">Contact</th>
+          <th class="text-center col-3"></th>
         </tr>
 
         <!-- Repeatable Template Row -->
-        <% for(let count = 0; count < User.length ; count++) { %>
+        <% for(let count = 0; count < Business.length ; count++) { %>
         <tr class="d-flex">
-          <td class="text-center col-2"><%=User[count].name %></td>
-          <td class="text-center col-5"><%= User[count].email %></td>
-          <td class="text-center col-5">
+          <td class="text-center col-2"><%=Business[count].name %></td>
+          <td class="text-center col-4"><%= Business[count].email %></td>
+          <td class="text-center col-3"><%= Business[count].contact %></td>
+          <td class="text-center col-3">
             <button type="button">Update</button>
             <button type="button">Delete</button>
           </td>

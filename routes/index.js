@@ -36,11 +36,11 @@ router.get("/contact", function (req, res, next) {
 /* GET business Us page. */
 router.get("/business", function (req, res, next) {
   // res.render("business", { title: "business" });
-  webuser.find((err, user) => {
+  webuser.find((err, business) => {
     if (err) {
       return console.error(err);
     } else {
-      res.render("business", { title: "Business", User: user });
+      res.render("business", { title: "Business", Business: business });
     }
   });
 });
