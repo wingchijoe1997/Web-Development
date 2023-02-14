@@ -406,3 +406,12 @@ textarea {
   font-weight: 0;
   padding: 0.5rem 3rem !important;
 }
+/* add page */
+.add-text {
+  color: #fffffe;
+}
+
+/* edit page */
+.edit-text {
+  color: #fffffe;
+}

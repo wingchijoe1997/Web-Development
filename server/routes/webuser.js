@@ -6,19 +6,19 @@ let mongoose = require("mongoose");
 let Business = require("../models/webuser");
 
 // get route for the business page  - read operation
-router.get("/", (req, res, next) => {
-  Business.find((err, business) => {
-    if (err) {
-      return console.error(err);
-    } else {
-      //console.log(user);
-      res.render("/businessList/business", {
-        title: "Business",
-        Business: business,
-      });
-    }
-  });
-});
+// router.get("/", (req, res, next) => {
+//   Business.find((err, business) => {
+//     if (err) {
+//       return console.error(err);
+//     } else {
+//       //console.log(user);
+//       res.render("/businessList/business", {
+//         title: "Business",
+//         Business: business,
+//       });
+//     }
+//   });
+// });
 
 // // get route for displaying the add page - Create Operation
 // router.get("/add", (req, res, next) => {

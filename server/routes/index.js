@@ -1,4 +1,5 @@
 var express = require("express");
+const { findById } = require("../models/webuser");
 var router = express.Router();
 
 let Business = require("../models/webuser");
@@ -80,10 +81,12 @@ router.get("/business/edit/:id", (req, res, next) => {
       console.log(err);
       res.end(err);
     } else {
-      res.render("/businessList/edit", {
+      res.render("businessList/edit", {
         title: "Edit business",
         Business: businessToEdit,
       });
+
+      console.log("123");
     }
   });
 });
@@ -107,7 +110,7 @@ router.post("/business/edit/:id", (req, res, next) => {
   });
 });
 
-// get route for displaying the delete page
+// get route for displaying  the delete page
 router.get("/business/delete/:id", (req, res, next) => {
   let id = req.params.id;
   Business.remove({ _id: id }, (err) => {
