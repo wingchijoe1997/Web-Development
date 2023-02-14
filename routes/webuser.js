@@ -12,7 +12,7 @@ router.get("/", (req, res, next) => {
       return console.error(err);
     } else {
       console.log(user);
-      res.render("business", { title: "business", User: user });
+      res.render("business", { title: "Business", User: user });
     }
   });
 });

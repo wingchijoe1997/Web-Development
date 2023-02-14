@@ -3,27 +3,28 @@
 <!-- Main Content of projects page -->
 <main class="container">
   <div class="row">
-    <div class="offset-md-1 col-md-10">
-      <h1><%= title %></h1>
+    <div class="offset-md-2 col-md-10">
+      <h1 class="business-title"><%= title %></h1>
       <br />
-      <table class="table table-bordered table-striped table-hover">
+      <table class="table table-bordered table-striped table-hover table-dark">
         <!-- Header Row-->
         <tr class="d-flex">
           <th class="text-center col-2">name</th>
-          <th class="text-center col-2">email</th>
-          <!-- <th class="text-center col-1">Year</th>
-          <th class="col-6">Description</th>
-          <th class="text-center col-1">Price</th> -->
+          <th class="text-center col-5">email</th>
         </tr>
 
         <!-- Repeatable Template Row -->
-
         <% for(let count = 0; count < User.length ; count++) { %>
         <tr class="d-flex">
           <td class="text-center col-2"><%=User[count].name %></td>
-          <td class="text-center col-2"><%= User[count].email %></td>
+          <td class="text-center col-5"><%= User[count].email %></td>
+          <td class="text-center col-5">
+            <button type="button">Update</button>
+            <button type="button">Delete</button>
+          </td>
         </tr>
         <% } %>
+        <button type="button">Add</button>
       </table>
     </div>
   </div>

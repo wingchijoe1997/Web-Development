@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
+let webuser = require("../models/webuser");
+
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("content", { title: "Home" });
@@ -31,9 +33,16 @@ router.get("/contact", function (req, res, next) {
   res.render("contact", { title: "Contact" });
 });
 
-/* GET Contact Us page. */
+/* GET business Us page. */
 router.get("/business", function (req, res, next) {
-  res.render("business", { title: "business" });
+  // res.render("business", { title: "business" });
+  webuser.find((err, user) => {
+    if (err) {
+      return console.error(err);
+    } else {
+      res.render("business", { title: "Business", User: user });
+    }
+  });
 });
 
 /* GET Contact Us page. */
