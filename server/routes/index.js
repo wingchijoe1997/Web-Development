@@ -43,7 +43,7 @@ router.get("/business/delete/:id", businessController.performDelete);
 
 /* GET Login Us page. */
 router.get("/Login", function (req, res, next) {
-  res.render("Login", { title: "Login" });
+  res.render("auth/login", { title: "Login" });
 });
 
 module.exports = router;

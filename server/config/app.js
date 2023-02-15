@@ -5,6 +5,13 @@ let path = require("path");
 let cookieParser = require("cookie-parser");
 let logger = require("morgan");
 
+//modules for authentication
+let session = require("express-session");
+let passport = require("passport");
+let passportlocal = require("passport-local");
+let localStrategy = passportlocal.Strategy;
+let flash = require("connect-flash");
+
 // database setup
 let mongoose = require("mongoose");
 let DB = require("./db");
@@ -33,9 +40,34 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../../public"))); //read css file or other file in public folder
 app.use(express.static(path.join(__dirname, "../../node_modules"))); //read css file or other file in node_modules folder
 
+//set up express session
+app.use(
+  session({
+    secret: "SomeSecret",
+    saveUninitialized: false,
+    resave: false,
+  })
+);
+
+// initialize flash
+app.use(flash());
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport user configuration
+
+// create a User Model Instance
+let userModel = require("../models/user");
+let User = userModel.User;
+
+// serialize and deserialize the User info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-
 // app.use("/webuser", webuserRouter); // can delete after finished the whole projects
 
 // catch 404 and forward to error handler
