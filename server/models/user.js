@@ -4,7 +4,7 @@ let passportLocalMongoose = require("passport-local-mongoose");
 
 let User = mongoose.Schema(
   {
-    name: {
+    username: {
       type: String,
       default: "",
       trim: true,
@@ -22,23 +22,23 @@ let User = mongoose.Schema(
       trim: true,
       required: "email address is required",
     },
-    displayName: {
-      type: String,
-      default: "",
-      trim: true,
-      required: "Display Name is required",
-    },
-    created: {
-      type: Date,
-      default: Date.now,
-    },
-    update: {
-      type: Date,
-      default: Date.now,
-    },
+    // displayName: {
+    //   type: String,
+    //   default: "",
+    //   trim: true,
+    //   required: "Display Name is required",
+    // },
+    // created: {
+    //   type: Date,
+    //   default: Date.now,
+    // },
+    // update: {
+    //   type: Date,
+    //   default: Date.now,
+    // },
   },
   {
-    collection: "users",
+    collection: "user",
   }
 );
 

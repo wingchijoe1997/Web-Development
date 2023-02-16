@@ -13,13 +13,17 @@ module.exports.displayBusiness = function (req, res, next) {
       res.render("businessList/business", {
         title: "Business",
         Business: business,
+        displayName: req.user ? req.user.displayName : "",
       });
     }
   });
 };
 
 module.exports.displayAddPage = (req, res, next) => {
-  res.render("businessList/add", { title: "Add business" });
+  res.render("businessList/add", {
+    title: "Add business",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.processAddPage = (req, res, next) => {
@@ -50,6 +54,7 @@ module.exports.displayEditPage = (req, res, next) => {
       res.render("businessList/edit", {
         title: "Edit business",
         Business: businessToEdit,
+        displayName: req.user ? req.user.displayName : "",
       });
 
       console.log("123");

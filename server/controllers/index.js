@@ -8,23 +8,38 @@ let userModel = require("../models/user");
 let User = userModel.User; // alias
 
 module.exports.displayHomePage = (req, res, next) => {
-  res.render("content", { title: "Home" });
+  res.render("content", {
+    title: "Home",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayAboutPage = (req, res, next) => {
-  res.render("about", { title: "About" });
+  res.render("about", {
+    title: "About",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayProjectsPage = (req, res, next) => {
-  res.render("projects", { title: "Projects" });
+  res.render("projects", {
+    title: "Projects",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayServicesPage = (req, res, next) => {
-  res.render("services", { title: "Services" });
+  res.render("services", {
+    title: "Services",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayContactPage = (req, res, next) => {
-  res.render("contact", { title: "Contact" });
+  res.render("contact", {
+    title: "Contact",
+    displayName: req.user ? req.user.displayName : "",
+  });
 };
 
 module.exports.displayLoginPage = (req, res, next) => {
@@ -57,16 +72,16 @@ module.exports.processLoginPage = (req, res, next) => {
         return next(err);
       }
 
-      const payload = {
-        id: user._id,
-        displayName: user.displayName,
-        username: user.username,
-        email: user.email,
-      };
+      // const payload = {
+      //   id: user._id,
+      //   displayName: user.displayName,
+      //   username: user.username,
+      //   email: user.email,
+      // };
 
-      const authToken = jwt.sign(payload, DB.Secret, {
-        expiresIn: 604800, // 1 week
-      });
+      // const authToken = jwt.sign(payload, DB.Secret, {
+      //   expiresIn: 604800, // 1 week
+      // });
 
       /* TODO - Getting Ready to convert to API
           res.json({success: true, msg: 'User Logged in Successfully!', user: {
@@ -84,5 +99,5 @@ module.exports.processLoginPage = (req, res, next) => {
 
 module.exports.performLogout = (req, res, next) => {
   req.logout();
-  res.redirect("/Login");
+  res.redirect("/login");
 };
