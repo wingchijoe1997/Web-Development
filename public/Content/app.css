@@ -343,9 +343,9 @@ textarea {
   box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
 }
 
-.btn,
-.btn:link,
-.btn:visited {
+.btn2,
+.btn2:link,
+.btn2:visited {
   display: inline-block;
 
   text-decoration: none;
@@ -413,5 +413,15 @@ textarea {
 
 /* edit page */
 .edit-text {
+  color: #fffffe;
+}
+
+/*login page*/
+.login-text {
+  color: #fffffe;
+}
+
+/* register page */
+.register-text {
   color: #fffffe;
 }

@@ -8,10 +8,10 @@
 
   <div class="row">
     <div class="offset-md-4 col-md-4">
-      <h1>Please Login</h1>
+      <h1 class="login-text">Please Login</h1>
       <form method="POST" autocomplete="off">
         <fieldset class="form-group">
-          <label for="username">Username: </label>
+          <label class="login-text" for="username">Username: </label>
           <input
             type="text"
             class="form-control"
@@ -24,7 +24,7 @@
         </fieldset>
 
         <fieldset class="form-group">
-          <label for="password">Password: </label>
+          <label class="login-text" for="password">Password: </label>
           <input
             type="password"
             class="form-control"
@@ -33,7 +33,7 @@
             id="password"
             required
           />
-          or
+          <p class="login-text">or</p>
           <a href="/register">Register Here</a>
         </fieldset>
 

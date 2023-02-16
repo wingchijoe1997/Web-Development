@@ -5,35 +5,24 @@
   <div class="row">
     <div class="offset-md-1 col-md-10">
       <h1 class="business-title"><%= title %></h1>
-      <!-- <a href="/business/add" class="Businessbtn btn btn-primary" role="button">
-        <i class="fas fa-plus-circle"></i>Add Business
-      </a> -->
-      <% if(typeof displayName == 'string' && displayName) { %>
       <a href="/business/add" class="Businessbtn btn btn-primary" role="button">
-        <i class="fas fa-plus-circle"></i> Add a Book</a
-      >
-      <% } %>
+        <i class="fas fa-plus-circle"></i>Add Business
+      </a>
+
       <br />
 
       <table class="table table-bordered table-striped table-hover table-dark">
         <!-- Header Row-->
         <tr class="d-flex">
-          <% if(typeof displayName == 'string' && displayName) { %>
           <th class="text-center col-2">Name</th>
           <th class="text-center col-4">Email</th>
           <th class="text-center col-2">Contact</th>
           <th class="text-center col-4"></th>
-          <% } else { %>
-          <th class="text-center col-2">Name</th>
-          <th class="text-center col-4">Email</th>
-          <th class="text-center col-2">Contact</th>
-          <% } %>
         </tr>
 
         <!-- Repeatable Template Row -->
         <% for(let count = 0; count < Business.length ; count++) { %>
         <tr class="d-flex">
-          <% if(typeof displayName == 'string' && displayName) { %>
           <td class="text-center col-2"><%=Business[count].name %></td>
           <td class="text-center col-4"><%= Business[count].email %></td>
           <td class="text-center col-2"><%= Business[count].contact %></td>
@@ -51,11 +40,6 @@
               ><i class="fas fa-trash-alt"></i>Delete</a
             >
           </td>
-          <% } else { %>
-          <td class="text-center col-2"><%=Business[count].name %></td>
-          <td class="text-center col-4"><%= Business[count].email %></td>
-          <td class="text-center col-2"><%= Business[count].contact %></td>
-          <% } %>
         </tr>
         <% } %>
       </table>
